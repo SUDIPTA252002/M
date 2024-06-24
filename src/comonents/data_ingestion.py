@@ -4,6 +4,7 @@ import os
 from src.exception import CustomException
 from src.logger import logging
 from dataclasses import dataclass
+from src.comonents.data_transformation import data_transformation
 
 @dataclass
 class Data_Ingestion_Config:
@@ -37,3 +38,5 @@ class Data_Ingestion:
 if __name__=="__main__":
     obj=Data_Ingestion()
     test_data_path=obj.initiate_data_ingestion()
+    Data_tansformer=data_transformation()
+    vector,_=Data_tansformer.initiate_data_transformation(test_data_path)
